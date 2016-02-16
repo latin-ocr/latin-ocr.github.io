@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-dark.css">
     <script src="javascripts/scale.fix.js"></script>
+    <script type="text/javascript">
+      function limitScope(){
+        document.searchform.q.value = document.searchform.user_q.value + ' user:latin-ocr language:Text';
+        return true;
+      }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!--[if lt IE 9]>
@@ -31,6 +37,18 @@
 <p>This project aims to develop high-quality OCR processes and results for digitized Latin books. For the first phase of the project, we're OCR'ing <a href="http://www.cs.cmu.edu/%7Edbamman/latin.html">21,509 books identified as potentially containing Latin content in the Internet Archive</a>, using <a href="https://github.com/tesseract-ocr/tesseract">Tesseract</a> 3.04.00 with the v0.3.0 <a href="https://ryanfb.github.io/latinocr/">Latin</a> and v2.0 <a href="https://ancientgreekocr.org/">Ancient Greek</a> language training files. For an overview of the project, see <a href="https://www.dropbox.com/s/zeqr8bsm586kvsw/Research%20Computing%202016%20Poster.pdf?dl=0">this poster PDF</a>.</p>
 
 <p>This project is run by <a href="http://ryanfb.github.io/">Ryan Baumann</a> of the <a href="http://dcthree.github.io/">Duke Collaboratory for Classics Computing</a>.</p>
+      </section>
+      <section>
+      <h3>
+        Search
+      </h3>
+      <p>Search the current OCR results by entering terms in the form below:</p>
+      <form action='https://github.com/search' onsubmit="limitScope();" name="searchform">
+        <input type="hidden" name="type" value="Code">
+        <input type="hidden" name="q" value="">
+        <input type="text" name="user_q" size="80">
+        <input type="submit" value="Submit">
+      </form>
       </section>
     </div>
     <footer>
